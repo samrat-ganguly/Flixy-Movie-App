@@ -1,0 +1,73 @@
+#home {
+  min-height: 96vh;
+  overflow: hidden;
+  position: relative;
+}
+.movie-name {
+  width: 25ch;
+  position: absolute;
+  z-index: 999;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  transform: translateY(-50%);
+  animation: fading 10s ease infinite;
+  font-size: 3rem;
+  font-family: var(--ff-offside) !important;
+  text-align: center;
+}
+.back-img {
+  min-height: 96vh;
+  background-image: url(../../image/Home/home_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  animation: fading 10s ease-in-out infinite;
+}
+.fade {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 96vh;
+  z-index: 2;
+  background: linear-gradient(transparent 30%, var(--clr-background) 100%);
+  overflow: hidden;
+}
+@keyframes fading {
+  0% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  10% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+}
+@media (max-width: 850px) {
+  #body {
+    min-height: 100vh;
+  }
+  .fade,
+  .back-img {
+    min-height: 100vh;
+  }
+  .movie-name {
+    width: 15ch;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}

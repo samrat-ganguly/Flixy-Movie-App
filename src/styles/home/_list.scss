@@ -1,0 +1,73 @@
+@media only screen and (min-width: 850px) {
+  .body-container {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+  }
+  .list {
+    padding-right: 80px !important;
+  }
+  .pad {
+    padding: 0 2rem 0 4rem;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .pad {
+    padding: 0 9rem;
+  }
+}
+
+.Top_Grossing,
+.Popular,
+.Upcoming {
+  padding: 1rem;
+}
+
+.list {
+  padding: 1rem 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-lists {
+  display: flex;
+  gap: 40px;
+  padding: 3rem 0;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 10px;
+    overflow: hidden;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-shade3);
+    border-radius: 25px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-shade4);
+  }
+}
+@media (max-width: 1000px) {
+  .card-lists {
+    padding: 0 1rem !important;
+  }
+}
+.top-line-break {
+  legend {
+    color: var(--clr-shade3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.4rem;
+    padding: 0.35rem 1.25rem;
+  }
+  fieldset {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    padding: 1rem 0;
+  }
+}

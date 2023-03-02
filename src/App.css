@@ -1,0 +1,36 @@
+/*
+=============== 
+Global Styles
+===============
+*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+* body::-webkit-scrollbar {
+  width: 12px;
+  overflow: hidden;
+}
+body::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 2%, 0);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 25px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 60%);
+  height: 90px;
+}
+
+body {
+  font-family: var(--ff-hind);
+  min-height: 100vh;
+  background: var(--clr-background);
+  color: var(--clr-white);
+}

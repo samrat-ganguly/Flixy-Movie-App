@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ruluko&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Offside&display=swap");
+
+:root {
+  --clr-background: rgb(40, 44, 52);
+  /* dark shades of primary color*/
+  --clr-primary-1: rgb(6, 50, 81);
+  --clr-primary-2: rgb(16, 78, 122);
+  --clr-primary-3: rgb(26, 106, 162);
+  --clr-primary-4: rgb(45, 135, 200);
+  /* primary/main color */
+  --clr-primary-5: rgb(73, 166, 233);
+  /* lighter shades of primary color */
+  --clr-primary-6: rgb(110, 190, 247);
+  --clr-primary-7: rgb(139, 203, 249);
+  --clr-primary-8: rgb(165, 213, 248);
+  --clr-primary-9: rgb(197, 229, 252);
+  --clr-primary-10: rgb(235, 247, 255);
+  /* darkest grey - used for headings */
+  --clr-grey-1: rgb(16, 42, 66);
+  --clr-grey-2: rgb(36, 58, 82);
+  --clr-grey-3: rgb(50, 77, 103);
+  --clr-grey-4: rgb(72, 100, 127);
+  /* grey used for paragraphs */
+  --clr-grey-5: rgb(97, 125, 152);
+  --clr-grey-6: rgb(130, 154, 176);
+  --clr-grey-7: rgb(158, 178, 199);
+  --clr-grey-8: rgb(188, 204, 220);
+  --clr-grey-9: rgb(218, 226, 236);
+  --clr-grey-10: rgb(241, 245, 248);
+
+  --clr-white: #fff;
+
+  --clr-red-dark: rgb(187, 37, 37);
+  --clr-red-light: rgb(230, 107, 107);
+
+  --clr-green-dark: rgb(37, 187, 50);
+  --clr-green-light: rgb(107, 230, 117);
+
+  --clr-black: rgb(0, 0, 0);
+
+  --clr-shade1: rgb(202, 114, 155);
+  --clr-shade2: rgb(173, 87, 188);
+  --clr-shade3: #c91dbd;
+  --clr-shade4: rgb(146, 57, 219);
+  --clr-shade5: rgb(80, 100, 113);
+
+  --clr-primary: rgb(219, 20, 60);
+
+  --ff-roboto: "Roboto", sans-serif;
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-hind: "Hind", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+  --ff-julius: "Julius Sans One", sans-serif;
+  --ff-merriweather: "Merriweather Sans", sans-serif;
+  --ff-fira-sans: "Fira Sans", sans-serif;
+  --ff-great-vibes: "Great Vibes", cursive;
+  --ff-sacramento: "Sacramento", cursive;
+  --ff-ruluko: "Ruluko", sans-serif;
+  --ff-offside: "Offside", cursive;
+
+  --transition: all 0.3s linear;
+
+  --spacing: 0.25rem;
+
+  --radius: 0.5rem;
+
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
