@@ -1,63 +1,63 @@
 .navbar {
-    inset: 0 auto 0 0;
-    width: 80px;
-    display: grid;
-    place-items: center;
-    padding-left: 10px;
-    height: 100vh;
-    position: sticky;
+  inset: 0 auto 0 0;
+  width: 80px;
+  display: grid;
+  place-items: center;
+  padding-left: 10px;
+  height: 100vh;
+  position: sticky;
 
+  .fa-house-user,
+  .fa-magnifying-glass,
+  .fa-fire-flame-curved,
+  .fa-star,
+  .fa-crown {
+    color: var(--clr-grey-6);
+    font-size: 1.5em;
+    display: block;
+    padding-top: 3em;
+    transition: color 0.5s;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+  }
+  .fa-house-user {
+    padding-top: 0 !important;
+  }
+
+  .fa-house-user:hover,
+  .fa-magnifying-glass:hover,
+  .fa-fire-flame-curved:hover,
+  .fa-star:hover,
+  .fa-crown:hover,
+  .fa-house-user:focus,
+  .fa-magnifying-glass:focus,
+  .fa-fire-flame-curved:focus,
+  .fa-star:focus,
+  .fa-crown:focus {
+    color: var(--clr-shade2);
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    position: sticky;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    z-index: 10;
+    background: var(--clr-background);
     .fa-house-user,
     .fa-magnifying-glass,
     .fa-fire-flame-curved,
     .fa-star,
     .fa-crown {
-        color: var(--clr-grey-6);
-        font-size: 1.5em;
-        display: block;
-        padding-top: 3em;
-        transition: color 0.5s;
-        border: none;
-        outline: none;
-        border-radius: 50%;
+      display: inline;
+      padding: 1rem;
+      font-size: 1.2em;
     }
-    .fa-house-user {
-        padding-top: 0 !important;
-    }
-
-    .fa-house-user:hover,
-    .fa-magnifying-glass:hover,
-    .fa-fire-flame-curved:hover,
-    .fa-star:hover,
-    .fa-crown:hover,
-    .fa-house-user:focus,
-    .fa-magnifying-glass:focus,
-    .fa-fire-flame-curved:focus,
-    .fa-star:focus,
-    .fa-crown:focus {
-        color: var(--clr-shade2);
-    }
-    a {
-        text-decoration: none;
-    }
-}
-
-@media (max-width: 850px) {
-    .navbar {
-        position: sticky;
-        width: 100vw;
-        height: 80px;
-        top: 0;
-        z-index: 10;
-        background: var(--clr-background);
-        .fa-house-user,
-        .fa-magnifying-glass,
-        .fa-fire-flame-curved,
-        .fa-star,
-        .fa-crown {
-            display: inline;
-            padding: 1rem;
-            font-size: 1.2em;
-        }
-    }
+  }
 }

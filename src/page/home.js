@@ -1,5 +1,4 @@
 import "../styles/home/main.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseUser,
@@ -8,8 +7,8 @@ import {
   faStar,
   faCrown,
 } from "@fortawesome/free-solid-svg-icons";
-
 import Card from "../components/card/card";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -42,21 +41,36 @@ const Home = () => {
             </fieldset>
             <div className="pad">
               <div className="card-lists">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
               </div>
             </div>
           </div>
@@ -67,21 +81,36 @@ const Home = () => {
             </fieldset>
             <div className="pad">
               <div className="card-lists">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
               </div>
             </div>
           </div>
@@ -92,21 +121,36 @@ const Home = () => {
             </fieldset>
             <div className="pad">
               <div className="card-lists">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
+                <Link to="/content" style={{ textDecoration: "none" }}>
+                  <Card />
+                </Link>
               </div>
             </div>
           </div>

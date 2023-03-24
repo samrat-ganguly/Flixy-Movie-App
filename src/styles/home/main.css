@@ -211,31 +211,43 @@
     display: grid;
     grid-template-columns: 80px 1fr;
   }
-  .list {
-    padding-right: 80px !important;
-  }
   .pad {
     padding: 0 2rem 0 4rem;
   }
 }
 @media only screen and (min-width: 1300px) {
   .pad {
-    padding: 0 9rem;
+    padding: 0 6rem;
   }
 }
 .Top_Grossing,
 .Popular,
 .Upcoming {
-  padding: 1rem;
+  margin-bottom: 100px;
 }
 
+.top-line-break {
+  margin: 1rem 5rem 3rem;
+}
+
+@media (max-width: 1440px) {
+  .top-line-break {
+    margin: 1rem;
+  }
+}
 .list {
-  padding: 1rem 0;
+  margin: 1rem 0;
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
+  padding: 0 140px 0 60px;
 }
 
+@media (max-width: 1140px) {
+  .list {
+    padding: 0 80px 0 0 !important;
+  }
+}
 .card-lists {
   display: flex;
   gap: 40px;
@@ -259,7 +271,16 @@
 
 @media (max-width: 1000px) {
   .card-lists {
-    padding: 0 1rem !important;
+    padding: 0 !important;
+  }
+}
+@media (max-width: 850px) {
+  .card-lists::-webkit-scrollbar {
+    height: 0;
+    overflow: hidden;
+  }
+  .list {
+    padding: 10px !important;
   }
 }
 .top-line-break legend {
