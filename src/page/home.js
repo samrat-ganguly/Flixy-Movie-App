@@ -31,9 +31,7 @@ const Home = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} />
             <FontAwesomeIcon icon={faFireFlameCurved} />
             <FontAwesomeIcon icon={faStar} />
-            <a href="./about-us/about-us.js" target="_blank">
-              <FontAwesomeIcon icon={faCrown} />
-            </a>
+            <FontAwesomeIcon icon={faCrown} />
           </div>
         </div>
 
