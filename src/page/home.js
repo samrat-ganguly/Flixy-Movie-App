@@ -1,4 +1,5 @@
 import "../styles/home/main.css";
+import home_bg from "../image/Home/home_bg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseUser,
@@ -15,7 +16,9 @@ const Home = () => {
     <div className="flixy">
       <section id="home">
         <h1 className="movie-name">Witcher 3 : Wild Hunt</h1>
-        <div className="back-img"></div>
+        <div className="back-img">
+          <img className="" src={home_bg} alt="!" />
+        </div>
         <div className="fade"></div>
       </section>
 
