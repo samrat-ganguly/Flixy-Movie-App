@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="logo">
-        <img src={icon1} className="logo icon1" alt="!" />
-        <p>&#169;FLIXY</p>
-        <img src={vid1} className="logo" alt="!" />
+        <img src={icon1} className="logo1 icon1" alt="!" />
+        <p className="icon1">&#169;FLIXY</p>
+        <img src={vid1} className="logo1" alt="!" />
       </div>
     </footer>
   );
