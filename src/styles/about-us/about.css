@@ -1,0 +1,181 @@
+:root {
+  --clr-background: rgb(40, 44, 52);
+  --clr-1: rgb(5, 43, 47);
+  --clr-2: rgb(7, 52, 56);
+  --clr-3: rgb(14, 75, 80);
+  --clr-4: rgb(45, 143, 133);
+  --clr-5: rgb(99, 124, 84);
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.aboutUs {
+  min-height: 100vh;
+  background: var(--clr-background);
+  isolation: isolate;
+  display: flex;
+  justify-content: center;
+}
+.aboutUs .aboutUs_container {
+  width: 400px;
+  border-left: 2px solid var(--clr-2);
+  border-right: 2px solid var(--clr-2);
+  margin-bottom: 50px;
+}
+.aboutUs .aboutUs_content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+@media (min-width: 750px) {
+  .aboutUs .aboutUs_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+.aboutUs .aboutUs_content .aboutUs_content_name {
+  position: relative;
+}
+.aboutUs .aboutUs_content .aboutUs_content_name .span {
+  position: absolute;
+  inset: auto 30% 0px auto;
+  transform: translateX(-50%);
+}
+.aboutUs .aboutUs_content .aboutUs_content_name .span h3 {
+  color: var(--clr-2);
+  font-size: 35px;
+  text-align: center;
+}
+@media (min-width: 750px) {
+  .aboutUs .aboutUs_content .aboutUs_content_name .span {
+    inset: auto 30% -30px auto;
+  }
+}
+.aboutUs .aboutUs_content .aboutUs_content_name .span_name {
+  position: absolute;
+  inset: auto 100px 100px auto;
+  letter-spacing: 5px;
+  color: var(--clr-4);
+}
+@media (min-width: 750px) {
+  .aboutUs .aboutUs_content .aboutUs_content_name .span_name {
+    inset: auto 100px 20px auto;
+  }
+}
+.aboutUs .aboutUs_content .aboutUs_content_card {
+  justify-self: center;
+}
+.aboutUs .aboutUs_content_card {
+  height: 350px;
+  aspect-ratio: 3/4;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.aboutUs .aboutUs_content_card img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+.aboutUs .aboutUs_content_card::after,
+.aboutUs .aboutUs_content_card::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  background: conic-gradient(from var(--gradient-angle), var(--clr-3), var(--clr-4), var(--clr-5), var(--clr-3));
+  border-radius: inherit;
+  animation: rotation 5s linear infinite;
+  z-index: -1;
+}
+.aboutUs .aboutUs_content_card::after {
+  filter: blur(10px);
+}
+.aboutUs .aboutUs_details {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 50px;
+}
+.aboutUs .aboutUs_details .aboutUs_details_left {
+  flex: 1;
+}
+.aboutUs .aboutUs_details .aboutUs_details_left .image1 {
+  width: 150px;
+  aspect-ratio: 1/1.25;
+  border-radius: 0.5rem;
+  margin: 0 0 25px auto;
+}
+.aboutUs .aboutUs_details .aboutUs_details_left .image2 {
+  height: 250px;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  margin: 25px 0 25px auto;
+}
+.aboutUs .aboutUs_details .aboutUs_details_left .image1 img,
+.aboutUs .aboutUs_details .aboutUs_details_left .image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+.aboutUs .aboutUs_details .aboutUs_details_left h2 {
+  margin-left: 20px;
+  color: var(--clr-4);
+  letter-spacing: 5px;
+}
+.aboutUs .aboutUs_details .aboutUs_details_left p {
+  margin-left: 20px;
+  color: var(--clr-3);
+}
+.aboutUs .aboutUs_details .aboutUs_details_right {
+  flex: 1;
+}
+.aboutUs .aboutUs_details .aboutUs_details_right h2 {
+  color: var(--clr-4);
+  letter-spacing: 5px;
+}
+.aboutUs .aboutUs_details .aboutUs_details_right p {
+  color: var(--clr-3);
+}
+.aboutUs .aboutUs_details .aboutUs_details_right .image3 {
+  width: 300px;
+  aspect-ratio: 1/1.5;
+  border-radius: 0.5rem;
+}
+.aboutUs .aboutUs_details .aboutUs_details_right .image3 {
+  margin-top: 20px;
+}
+.aboutUs .aboutUs_details .aboutUs_details_right .image3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+@media (min-width: 750px) {
+  .aboutUs .aboutUs_details {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 750px) {
+  .aboutUs {
+    padding-top: 50px;
+  }
+  .aboutUs .aboutUs_container {
+    width: 750px;
+  }
+}
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}/*# sourceMappingURL=about.css.map */

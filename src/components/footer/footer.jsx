@@ -1,6 +1,6 @@
-import logo from "../../image/Footer/c-reel.png";
 import icon1 from "../../icons/icons8-film-reel-80.png";
 import vid1 from "../../image/Footer/vid1-unscreen.gif";
+import vid3 from "../../image/Footer/vid3.gif";
 
 import "./footer.css";
 

@@ -2,7 +2,9 @@ import Loader from "./page/loader";
 import Home from "./page/home";
 import Content from "./page/content";
 import Search from "./page/search";
+import AboutUs from "./page/aboutUs";
 import Footer from "./components/footer/footer";
+
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -28,6 +30,8 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/content" element={<Content />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/aboutUs" element={<AboutUs />} />
           </Routes>
           <Footer />
         </div>

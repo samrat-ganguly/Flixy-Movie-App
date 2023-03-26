@@ -28,10 +28,14 @@ const Home = () => {
             <a href="#home">
               <FontAwesomeIcon icon={faHouseUser} />
             </a>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <Link to="/search">
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </Link>
             <FontAwesomeIcon icon={faFireFlameCurved} />
             <FontAwesomeIcon icon={faStar} />
-            <FontAwesomeIcon icon={faCrown} />
+            <Link to="/aboutUs">
+              <FontAwesomeIcon icon={faCrown} />
+            </Link>
           </div>
         </div>
 
