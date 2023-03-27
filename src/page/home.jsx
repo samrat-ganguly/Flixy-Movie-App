@@ -56,7 +56,7 @@ const Home = () => {
                   ? movie.grossing.map((e) => {
                       return (
                         <Link
-                          to="/content/${e.id}"
+                          to={`/content/${e.id}`}
                           style={{ textDecoration: "none" }}
                           key={e.id}
                         >
@@ -83,7 +83,7 @@ const Home = () => {
                   ? movie.popular.map((e) => {
                       return (
                         <Link
-                          to="/content"
+                          to={`/content/${e.id}`}
                           style={{ textDecoration: "none" }}
                           key={e.id}
                         >
@@ -110,7 +110,7 @@ const Home = () => {
                   ? movie.upcoming.map((e) => {
                       return (
                         <Link
-                          to="/content"
+                          to={`/content/${e.id}`}
                           style={{ textDecoration: "none" }}
                           key={e.id}
                         >
