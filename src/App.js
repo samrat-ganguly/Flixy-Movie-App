@@ -12,24 +12,24 @@ import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
-  const [loading, setLoading] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    setLoader(true);
     setTimeout(() => {
-      setLoading(false);
+      setLoader(false);
     }, 100);
   }, []);
   return (
     <div className="App">
-      {loading ? (
+      {loader ? (
         <Loader />
       ) : (
         <div>
           <ScrollToTop />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/content" element={<Content />} />
+            <Route path="/content/:id" element={<Content />} />
             <Route path="/search" element={<Search />} />
             <Route path="/aboutUs" element={<AboutUs />} />
           </Routes>

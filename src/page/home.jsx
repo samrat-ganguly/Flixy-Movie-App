@@ -1,5 +1,3 @@
-import "../styles/home/main.css";
-import home_bg from "../image/Home/home_bg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseUser,
@@ -8,10 +6,18 @@ import {
   faStar,
   faCrown,
 } from "@fortawesome/free-solid-svg-icons";
-import Card from "../components/card/card";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "./context";
+
+import Card from "../components/card/card";
+
+import home_bg from "../image/Home/home_bg.jpg";
+
+import "../styles/home/main.css";
 
 const Home = () => {
+  const movie = useGlobalContext();
+
   return (
     <div className="flixy">
       <section id="home">
@@ -46,36 +52,23 @@ const Home = () => {
             </fieldset>
             <div className="pad">
               <div className="card-lists">
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
+                {movie.grossing.length !== 0
+                  ? movie.grossing.map((e) => {
+                      return (
+                        <Link
+                          to="/content/${e.id}"
+                          style={{ textDecoration: "none" }}
+                          key={e.id}
+                        >
+                          <Card
+                            title={e.title}
+                            img={e.poster_path}
+                            date={e.release_date}
+                          />
+                        </Link>
+                      );
+                    })
+                  : ""}
               </div>
             </div>
           </div>
@@ -86,36 +79,23 @@ const Home = () => {
             </fieldset>
             <div className="pad">
               <div className="card-lists">
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
+                {movie.popular.length !== 0
+                  ? movie.popular.map((e) => {
+                      return (
+                        <Link
+                          to="/content"
+                          style={{ textDecoration: "none" }}
+                          key={e.id}
+                        >
+                          <Card
+                            title={e.title}
+                            img={e.poster_path}
+                            date={e.release_date}
+                          />
+                        </Link>
+                      );
+                    })
+                  : ""}
               </div>
             </div>
           </div>
@@ -126,36 +106,23 @@ const Home = () => {
             </fieldset>
             <div className="pad">
               <div className="card-lists">
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
-                <Link to="/content" style={{ textDecoration: "none" }}>
-                  <Card />
-                </Link>
+                {movie.upcoming.length !== 0
+                  ? movie.upcoming.map((e) => {
+                      return (
+                        <Link
+                          to="/content"
+                          style={{ textDecoration: "none" }}
+                          key={e.id}
+                        >
+                          <Card
+                            title={e.title}
+                            img={e.poster_path}
+                            date={e.release_date}
+                          />
+                        </Link>
+                      );
+                    })
+                  : ""}
               </div>
             </div>
           </div>

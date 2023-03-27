@@ -254,7 +254,7 @@
 }
 .card-lists {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   padding: 3rem 0;
   overflow-x: auto;
 }

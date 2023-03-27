@@ -1,16 +1,23 @@
-import bg from "../../image/Card/background.jpg";
+import not_found from "../../image/Card/not_found.webp";
 import "./card.css";
 
-const Card = () => {
+const Card = ({ title, img, date }) => {
+  const getImage = () => {
+    if (img === null) {
+      return not_found;
+    } else {
+      return `https://image.tmdb.org/t/p/w500/${img}`;
+    }
+  };
   return (
     <div className="card">
       <div className="front">
         <div className="thumbnail">
-          <img src={bg} alt="!" />
+          <img src={getImage()} alt="!" />
         </div>
         <div className="details">
-          <h3>Hitman</h3>
-          <p>16th Jan, 2021</p>
+          <h5>{title}</h5>
+          <p>{date}</p>
         </div>
       </div>
     </div>
