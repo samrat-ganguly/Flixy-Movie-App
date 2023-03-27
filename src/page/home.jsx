@@ -15,8 +15,23 @@ import home_bg from "../image/Home/home_bg.jpg";
 
 import "../styles/home/main.css";
 
+const API_URL_Image = `https://api.themoviedb.org/3/movie/603692/images?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+
 const Home = () => {
   const movie = useGlobalContext();
+
+  const getImage = async (API_URL_Image) => {
+    const image = await (await fetch(API_URL_Image)).json();
+    try {
+      if (image) {
+        console.log("Image", image.poster);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getImage(API_URL_Image);
 
   return (
     <div className="flixy">
