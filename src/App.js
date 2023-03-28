@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 
 import ScrollToTop from "./ScrollToTop";
 import PopularPage from "./page/popular_page";
+import TrendingPage from "./page/trending_page";
 
 const App = () => {
   const [loader, setLoader] = useState(false);
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/content/:id" element={<Content />} />
             <Route path="/search" element={<Search />} />
             <Route path="/popular" element={<PopularPage />} />
+            <Route path="/trending" element={<TrendingPage />} />
             <Route path="/aboutUs" element={<AboutUs />} />
           </Routes>
           <Footer />

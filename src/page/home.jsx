@@ -44,10 +44,12 @@ const Home = () => {
             <Link to="/search">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </Link>
-            <Link to="/popular">
+            <Link to="/trending">
               <FontAwesomeIcon icon={faFireFlameCurved} />
             </Link>
-            <FontAwesomeIcon icon={faStar} />
+            <Link to="/popular">
+              <FontAwesomeIcon icon={faStar} />
+            </Link>
             <Link to="/aboutUs">
               <FontAwesomeIcon icon={faCrown} />
             </Link>

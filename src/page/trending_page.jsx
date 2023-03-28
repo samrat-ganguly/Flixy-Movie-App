@@ -5,9 +5,9 @@ import axios from "axios";
 
 import Card from "../components/card/card";
 
-import "../styles/popular_page/popular_page.css";
+import "../styles/trending_page/trending_page.css";
 
-const PopularPage = () => {
+const TrendingPage = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -15,7 +15,7 @@ const PopularPage = () => {
     const getMovies = async () => {
       try {
         const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`
+          `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`
         );
         setMovies([...movies, ...res.data.results]);
       } catch (error) {
@@ -28,12 +28,12 @@ const PopularPage = () => {
   }, [page]);
   console.log(movies);
   return (
-    <div className="Popular_page">
-      <div className="Popular_page_container">
-        <div className="Popular_page_container_heading">
-          <h1>POPULAR</h1>
+    <div className="Trending_page">
+      <div className="Trending_page_container">
+        <div className="Trending_page_container_heading">
+          <h1>TOP TRENDING</h1>
         </div>
-        <div className="Popular_page_container_card_lists">
+        <div className="Trending_page_container_card_lists">
           {movies.map((e) => {
             return (
               <Link
@@ -50,7 +50,7 @@ const PopularPage = () => {
             );
           })}
         </div>
-        <div className="Popular_page_container_more_content">
+        <div className="Trending_page_container_more_content">
           <button
             onClick={() => {
               setPage(page + 1);
@@ -64,4 +64,4 @@ const PopularPage = () => {
   );
 };
 
-export default PopularPage;
+export default TrendingPage;
