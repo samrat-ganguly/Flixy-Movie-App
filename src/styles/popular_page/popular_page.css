@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
+:root {
+  --clr-background: rgb(40, 44, 52);
+  --clr-shade3: rgb(201, 29, 189);
+  --clr-grey-3: rgb(50, 77, 103);
+  --clr-grey-4: rgb(72, 100, 127);
+  /* grey used for paragraphs */
+  --clr-grey-5: rgb(97, 125, 152);
+  --clr-grey-6: rgb(130, 154, 176);
+  --clr-grey-7: rgb(158, 178, 199);
+  --ff-hind: "Hind", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+}
+
+.Popular_page {
+  min-height: 100vh;
+}
+.Popular_page .Popular_page_container {
+  margin-inline: 20%;
+}
+.Popular_page .Popular_page_container .Popular_page_container_heading {
+  margin: 20px 0;
+}
+.Popular_page .Popular_page_container .Popular_page_container_heading h1 {
+  text-align: center;
+  color: var(--clr-shade3);
+  font-family: var(--ff-nunito);
+  letter-spacing: 5px;
+}
+.Popular_page .Popular_page_container .Popular_page_container_card_lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: center;
+  gap: 20px;
+  border-top: 2px solid rgba(130, 154, 176, 0.2);
+  padding-top: 50px;
+}
+.Popular_page button {
+  padding: 0.5rem 2rem;
+  border-radius: 100vh;
+  background: transparent;
+  border: 2px solid var(--clr-shade3);
+  transition: background 0.5s ease, color 0.5s ease;
+  color: var(--clr-shade3);
+  margin-inline: auto;
+  display: block;
+  font-weight: bold;
+  font-family: var(--ff-hind);
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+@media (min-width: 1024px) {
+  .Popular_page button:hover {
+    background: var(--clr-shade3);
+    color: var(--clr-background);
+  }
+}
+.Popular_page .Popular_page_container_more_content {
+  margin-block: 50px;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .Popular_page .Popular_page_container {
+    margin-left: 2%;
+    margin-right: 1%;
+  }
+  .Popular_page .Popular_page_container .Popular_page_container_card_lists {
+    gap: 0;
+  }
+}/*# sourceMappingURL=popular_page.css.map */

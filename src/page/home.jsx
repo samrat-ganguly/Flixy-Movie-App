@@ -15,30 +15,22 @@ import home_bg from "../image/Home/home_bg.jpg";
 
 import "../styles/home/main.css";
 
-const API_URL_Image = `https://api.themoviedb.org/3/movie/603692/images?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
-
 const Home = () => {
   const movie = useGlobalContext();
-
-  const getImage = async (API_URL_Image) => {
-    const image = await (await fetch(API_URL_Image)).json();
-    try {
-      if (image) {
-        console.log("Image", image.poster);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  getImage(API_URL_Image);
 
   return (
     <div className="flixy">
       <section id="home">
         <h1 className="movie-name">Witcher 3 : Wild Hunt</h1>
         <div className="back-img">
-          <img className="" src={home_bg} alt="!" />
+          <img
+            src={
+              movie?.grossing?.length
+                ? `https://image.tmdb.org/t/p/original${movie.grossing[0].backdrop_path}`
+                : ""
+            }
+            alt="!"
+          />
         </div>
         <div className="fade"></div>
       </section>
@@ -52,7 +44,9 @@ const Home = () => {
             <Link to="/search">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </Link>
-            <FontAwesomeIcon icon={faFireFlameCurved} />
+            <Link to="/popular">
+              <FontAwesomeIcon icon={faFireFlameCurved} />
+            </Link>
             <FontAwesomeIcon icon={faStar} />
             <Link to="/aboutUs">
               <FontAwesomeIcon icon={faCrown} />

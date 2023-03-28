@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import ScrollToTop from "./ScrollToTop";
+import PopularPage from "./page/popular_page";
 
 const App = () => {
   const [loader, setLoader] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
             <Route exact path="/" element={<Home />} />
             <Route path="/content/:id" element={<Content />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/popular" element={<PopularPage />} />
             <Route path="/aboutUs" element={<AboutUs />} />
           </Routes>
           <Footer />

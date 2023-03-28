@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -13,46 +14,55 @@ const AppProvider = ({ children }) => {
   const [popular, setPopular] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   // fetching top grossing url
   const getGrossing = async (API_URL_TOP_GROSSING) => {
-    const res_grossing = await (await fetch(API_URL_TOP_GROSSING)).json();
+    const res_grossing = await axios.get(API_URL_TOP_GROSSING);
     try {
       if (res_grossing.length !== 0) {
-        console.log("Grossing", res_grossing);
         setLoading(false);
-        setGrossing(res_grossing.results);
+        setGrossing(res_grossing.data.results);
       }
     } catch (error) {
       console.log(error);
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
   // fetching top grossing url
   const getPopular = async (API_URL_POPULAR) => {
-    const res_popular = await (await fetch(API_URL_POPULAR)).json();
+    const res_popular = await axios.get(API_URL_POPULAR);
     // console.log("Popular", res_popular);
     try {
       if (res_popular) {
         setLoading(false);
-        setPopular(res_popular.results);
+        setPopular(res_popular.data.results);
       }
     } catch (error) {
       console.log(error);
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
   // fetching top grossing url
   const getUpcoming = async (API_URL_UPCOMMING) => {
-    const res_upcoming = await (await fetch(API_URL_UPCOMMING)).json();
+    const res_upcoming = await axios.get(API_URL_UPCOMMING);
     // console.log("Upcoming", res_upcoming);
     try {
       if (res_upcoming) {
         setLoading(false);
-        setUpcoming(res_upcoming.results);
+        setUpcoming(res_upcoming.data.results);
       }
     } catch (error) {
       console.log(error);
+      setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
