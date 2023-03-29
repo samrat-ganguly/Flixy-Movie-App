@@ -49,13 +49,31 @@
   justify-content: center;
   gap: 20px;
   border-top: 2px solid rgba(130, 154, 176, 0.2);
-  padding-top: 50px;
+  padding-block: 50px;
 }
-.Search .Search_container .Search_container_results h3 {
+.Search .Search_container .Search_container_results .Search_container_results_not_found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.Search .Search_container .Search_container_results .Search_container_results_not_found img {
+  animation: move 1s ease infinite alternate;
+}
+.Search .Search_container .Search_container_results .Search_container_results_not_found h3 {
   font-family: var(--ff-hind);
   color: var(--clr-shade3);
   letter-spacing: 5px;
   text-align: center;
+}
+@keyframes move {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 @media (max-width: 1024px) {
   .Search .Search_container {
