@@ -97,27 +97,11 @@
       height: 250px;
       background: linear-gradient(0deg, var(--clr-background), transparent);
     }
-
-    // .c {
-    //   position: absolute;
-    //   width: 100%;
-    //   height: 100%;
-    //   background: var(--clr-background);
-    //   top: 0;
-    //   right: 0;
-    //   animation: reveal 1000ms ease-in-out forwards;
-    //   transform-origin: left;
-    // }
-
-    // @keyframes reveal {
-    //   100% {
-    //     width: 0%;
-    //   }
-    // }
   }
 
   section {
-    .content-cast {
+    .content-cast,
+    .content-crew {
       padding: 1rem 2rem 3rem;
 
       legend {
@@ -164,14 +148,16 @@
       }
     }
 
-    @media only screen and (min-width: 1300px) {
-      .content-cast {
-        padding: 1rem 9rem 3rem !important;
+    @media only screen and (min-width: 1024px) {
+      .content-cast,
+      .content-crew {
+        margin-inline: 10% !important;
       }
     }
 
     @media only screen and (min-width: 850px) {
-      .content-cast {
+      .content-cast,
+      .content-crew {
         padding: 1rem 4rem 3rem 4rem !important;
       }
     }

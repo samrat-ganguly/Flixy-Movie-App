@@ -37,6 +37,11 @@ const Content = () => {
     getMovie();
   }, []);
 
+  const getTime = () => {
+    const time = movieData.runtime;
+    return `${Math.floor(time / 60)} hr ${time % 60} mins`;
+  };
+
   return (
     <div className="content">
       <main>
@@ -52,17 +57,19 @@ const Content = () => {
 
           <div className="movie-details">
             <h1>{movieData.title}</h1>
-            <h3>{movieData.tagline}</h3>
+            <h3>{movieData.tagline ? `" ${movieData.tagline} "` : ``}</h3>
 
             <div className="movie-content">
-              <p>2023</p>
+              <p>{movieData.release_date}</p>
               <span></span>
-              <p>1h 30m</p>
+              <p>{getTime()}</p>
               <span></span>
               <div className="genre">
-                <p>Action</p>
-                <p>Adventure</p>
-                <p>Thriller</p>
+                {movieData?.genres?.length
+                  ? movieData.genres.slice(0, 2).map((e) => {
+                      return <p key={e.id}>{e.name}</p>;
+                    })
+                  : ""}
               </div>
             </div>
 
@@ -70,7 +77,13 @@ const Content = () => {
 
             <div className="movie-content">
               <h3>Directed By : </h3>
-              <h3>Andrie Sapowskey</h3>
+              {movieData?.crew?.length
+                ? movieData.crew.map((e, i) => {
+                    if (e.job === "Director") {
+                      return <h3 key={i}>{e.name}</h3>;
+                    }
+                  })
+                : ""}
             </div>
           </div>
 
@@ -86,7 +99,39 @@ const Content = () => {
           </fieldset>
           <div className="pad">
             <div className="cast-lists">
-              <Card />
+              {movieData?.cast?.length
+                ? movieData.cast.map((e, i) => {
+                    return (
+                      <Card
+                        title={e.name}
+                        date={e.character}
+                        img={e.profile_path}
+                        key={i}
+                      />
+                    );
+                  })
+                : ""}
+            </div>
+          </div>
+        </div>
+        <div className="content-crew">
+          <fieldset>
+            <legend>Crew</legend>
+          </fieldset>
+          <div className="pad">
+            <div className="cast-lists">
+              {movieData?.crew?.length
+                ? movieData.crew.map((e, i) => {
+                    return (
+                      <Card
+                        title={e.name}
+                        date={e.job}
+                        img={e.profile_path}
+                        key={i}
+                      />
+                    );
+                  })
+                : ""}
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ const PopularPage = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
-  console.log(movies);
+
   return (
     <div className="Popular_page">
       <div className="Popular_page_container">

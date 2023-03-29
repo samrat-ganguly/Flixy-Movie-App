@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "./context";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseUser,
@@ -6,27 +10,35 @@ import {
   faStar,
   faCrown,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { useGlobalContext } from "./context";
 
 import Card from "../components/card/card";
-
-import home_bg from "../image/Home/home_bg.jpg";
 
 import "../styles/home/main.css";
 
 const Home = () => {
   const movie = useGlobalContext();
 
+  let i = 0;
+
+  const [image, setImage] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setImage((image + 1) % 20);
+    }, 10000);
+  }, [image]);
+
   return (
     <div className="flixy">
       <section id="home">
-        <h1 className="movie-name">Witcher 3 : Wild Hunt</h1>
+        <h1 className="movie-name">
+          {movie?.grossing?.length ? `${movie.grossing[image].title}` : ""}
+        </h1>
         <div className="back-img">
           <img
             src={
               movie?.grossing?.length
-                ? `https://image.tmdb.org/t/p/original${movie.grossing[0].backdrop_path}`
+                ? `https://image.tmdb.org/t/p/original${movie.grossing[image].backdrop_path}`
                 : ""
             }
             alt="!"

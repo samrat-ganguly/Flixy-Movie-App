@@ -160,54 +160,65 @@
   height: 250px;
   background: linear-gradient(0deg, var(--clr-background), transparent);
 }
-.content section .content-cast {
+.content section .content-cast,
+.content section .content-crew {
   padding: 1rem 2rem 3rem;
 }
-.content section .content-cast legend {
+.content section .content-cast legend,
+.content section .content-crew legend {
   color: var(--clr-shade3);
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.4rem;
   padding: 0.35rem 1.25rem;
 }
-.content section .content-cast fieldset {
+.content section .content-cast fieldset,
+.content section .content-crew fieldset {
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-right: 0;
   border-left: 0;
   border-bottom: 0;
   padding: 1rem 0;
 }
-.content section .content-cast .cast-lists {
+.content section .content-cast .cast-lists,
+.content section .content-crew .cast-lists {
   display: flex;
   gap: 40px;
   padding: 3rem 0;
   overflow-x: auto;
 }
-.content section .content-cast .cast-lists::-webkit-scrollbar {
+.content section .content-cast .cast-lists::-webkit-scrollbar,
+.content section .content-crew .cast-lists::-webkit-scrollbar {
   height: 10px;
   overflow: hidden;
 }
-.content section .content-cast .cast-lists::-webkit-scrollbar-track {
+.content section .content-cast .cast-lists::-webkit-scrollbar-track,
+.content section .content-crew .cast-lists::-webkit-scrollbar-track {
   background: transparent;
 }
-.content section .content-cast .cast-lists::-webkit-scrollbar-thumb {
+.content section .content-cast .cast-lists::-webkit-scrollbar-thumb,
+.content section .content-crew .cast-lists::-webkit-scrollbar-thumb {
   background-color: var(--clr-shade3);
   border-radius: 25px;
 }
-.content section .content-cast .cast-lists::-webkit-scrollbar-thumb:hover {
+.content section .content-cast .cast-lists::-webkit-scrollbar-thumb:hover,
+.content section .content-crew .cast-lists::-webkit-scrollbar-thumb:hover {
   background: var(--clr-shade4);
 }
 @media (max-width: 1000px) {
-  .content section .content-cast .card-lists {
+  .content section .content-cast .card-lists,
+  .content section .content-crew .card-lists {
     padding: 0 1rem !important;
   }
 }
-@media only screen and (min-width: 1300px) {
-  .content section .content-cast {
-    padding: 1rem 9rem 3rem !important;
+@media only screen and (min-width: 1024px) {
+  .content section .content-cast,
+  .content section .content-crew {
+    margin-inline: 10% !important;
   }
 }
 @media only screen and (min-width: 850px) {
-  .content section .content-cast {
+  .content section .content-cast,
+  .content section .content-crew {
     padding: 1rem 4rem 3rem 4rem !important;
   }
 }
