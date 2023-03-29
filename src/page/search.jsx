@@ -26,8 +26,6 @@ const Search = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue]);
 
-  console.log("Movie", movie);
-
   return (
     <div className="Search">
       <div className="Search_container">
@@ -47,7 +45,6 @@ const Search = () => {
           {inputValue || movie?.results?.length ? (
             movie?.results?.length ? (
               movie.results.map((e) => {
-                console.log(e);
                 return (
                   <Link
                     to={`/content/${e.id}`}
@@ -63,7 +60,7 @@ const Search = () => {
                 );
               })
             ) : (
-              ""
+              <h3>NO MOVIES MATCHED !!!</h3>
             )
           ) : (
             <h3>NO MOVIES MATCHED !!!</h3>

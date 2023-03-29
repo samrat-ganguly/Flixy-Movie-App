@@ -162,7 +162,7 @@
 }
 .content section .content-cast,
 .content section .content-crew {
-  padding: 1rem 2rem 3rem;
+  padding: 1rem 2rem 0rem;
 }
 .content section .content-cast legend,
 .content section .content-crew legend {
@@ -183,26 +183,33 @@
 .content section .content-crew .cast-lists {
   display: flex;
   gap: 40px;
-  padding: 3rem 0;
+  padding: 1rem 0;
   overflow-x: auto;
 }
 .content section .content-cast .cast-lists::-webkit-scrollbar,
 .content section .content-crew .cast-lists::-webkit-scrollbar {
-  height: 10px;
+  height: 0px;
   overflow: hidden;
 }
-.content section .content-cast .cast-lists::-webkit-scrollbar-track,
-.content section .content-crew .cast-lists::-webkit-scrollbar-track {
-  background: transparent;
-}
-.content section .content-cast .cast-lists::-webkit-scrollbar-thumb,
-.content section .content-crew .cast-lists::-webkit-scrollbar-thumb {
-  background-color: var(--clr-shade3);
-  border-radius: 25px;
-}
-.content section .content-cast .cast-lists::-webkit-scrollbar-thumb:hover,
-.content section .content-crew .cast-lists::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-shade4);
+@media (min-width: 850px) {
+  .content section .content-cast .cast-lists::-webkit-scrollbar,
+  .content section .content-crew .cast-lists::-webkit-scrollbar {
+    height: 10px;
+    overflow: hidden;
+  }
+  .content section .content-cast .cast-lists::-webkit-scrollbar-track,
+  .content section .content-crew .cast-lists::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .content section .content-cast .cast-lists::-webkit-scrollbar-thumb,
+  .content section .content-crew .cast-lists::-webkit-scrollbar-thumb {
+    background-color: var(--clr-shade3);
+    border-radius: 25px;
+  }
+  .content section .content-cast .cast-lists::-webkit-scrollbar-thumb:hover,
+  .content section .content-crew .cast-lists::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-shade4);
+  }
 }
 @media (max-width: 1000px) {
   .content section .content-cast .card-lists,
