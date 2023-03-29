@@ -4,6 +4,7 @@ import Content from "./page/content";
 import Search from "./page/search";
 import AboutUs from "./page/aboutUs";
 import Footer from "./components/footer/footer";
+import Error from "./page/error/error";
 
 import "./App.css";
 import React, { useState, useEffect } from "react";
@@ -20,7 +21,7 @@ const App = () => {
     setLoader(true);
     setTimeout(() => {
       setLoader(false);
-    }, 100);
+    }, 3350);
   }, []);
   return (
     <div className="App">
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/popular" element={<PopularPage />} />
             <Route path="/trending" element={<TrendingPage />} />
             <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/error" element={<Error />} />
           </Routes>
           <Footer />
         </div>

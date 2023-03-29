@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import Card from "../components/card/card";
-import ghost from "../image/Search/dino-100.png";
+import dino from "../image/Search/dino-100.png";
 
 import "../styles/search/search.css";
 
@@ -62,13 +62,13 @@ const Search = () => {
               })
             ) : (
               <div className="Search_container_results_not_found">
-                <img src={ghost}></img>
+                <img src={dino}></img>
                 <h3>NO MOVIES MATCHED !!!</h3>
               </div>
             )
           ) : (
             <div className="Search_container_results_not_found">
-              <img src={ghost}></img>
+              <img src={dino}></img>
               <h3>NO MOVIES MATCHED !!!</h3>
             </div>
           )}

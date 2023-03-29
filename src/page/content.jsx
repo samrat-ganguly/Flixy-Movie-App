@@ -1,11 +1,12 @@
-import "../styles/content/content.css";
-import pic from "../image/Home/content_bg.jpeg";
-import not_found from "../image/Card/not_found.webp";
-
-import Card from "../components/card/card";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import Card from "../components/card/card";
+import Loader from "./loader";
+import Error from "./error/error";
+
+import "../styles/content/content.css";
 
 const Content = () => {
   const { id } = useParams();
@@ -21,7 +22,10 @@ const Content = () => {
       const res2 = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
       );
-      setMovieData({ ...res1.data, ...res2.data });
+      if (res1 && res2) {
+        setLoading(false);
+        setMovieData({ ...res1.data, ...res2.data });
+      }
     } catch (error) {
       console.log(error);
       setError(true);
@@ -30,12 +34,25 @@ const Content = () => {
     }
   };
 
-  // if (loading) return <div></div>;
-  // if (error) return <div></div>;
-
   useEffect(() => {
     getMovie();
   }, []);
+
+  if (loading) {
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <Error />
+      </div>
+    );
+  }
 
   const getTime = () => {
     const time = movieData.runtime;

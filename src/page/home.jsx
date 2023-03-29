@@ -18,9 +18,9 @@ import "../styles/home/main.css";
 const Home = () => {
   const movie = useGlobalContext();
 
-  let i = 0;
-
   const [image, setImage] = useState(0);
+
+  let i = 0;
 
   useEffect(() => {
     setTimeout(() => {

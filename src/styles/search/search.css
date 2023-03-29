@@ -59,7 +59,7 @@
   gap: 20px;
 }
 .Search .Search_container .Search_container_results .Search_container_results_not_found img {
-  animation: move 1s ease infinite alternate;
+  animation: move 0.8s ease-in-out infinite alternate;
 }
 .Search .Search_container .Search_container_results .Search_container_results_not_found h3 {
   font-family: var(--ff-hind);
@@ -69,10 +69,10 @@
 }
 @keyframes move {
   0% {
-    transform: translateY(-20px);
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(-20px);
   }
 }
 @media (max-width: 1024px) {

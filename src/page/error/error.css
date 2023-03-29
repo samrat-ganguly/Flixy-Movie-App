@@ -1,0 +1,16 @@
+.Error {
+  height: 85vh;
+  display: grid;
+  place-items: center;
+}
+.Error .Error_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.Error .Error_container h1 {
+  font-size: 70px;
+  height: 70px;
+  color: var(--clr-shade3);
+}/*# sourceMappingURL=error.css.map */
