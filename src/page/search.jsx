@@ -1,201 +1,75 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+import Card from "../components/card/card";
+
+import "../styles/search/search.css";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
-  const [result, setResult] = useState([]);
-  const nameList = [
-    "Aaberg",
-    "Aalst",
-    "Aara",
-    "Aaren",
-    "Aarika",
-    "Aaron",
-    "Aaronson",
-    "Ab",
-    "Aba",
-    "Abad",
-    "Abagael",
-    "Abagail",
-    "Abana",
-    "Abate",
-    "Abba",
-    "Abbate",
-    "Abbe",
-    "Abbey",
-    "Abbi",
-    "Abbie",
-    "Abbot",
-    "Abbotsen",
-    "Abbotson",
-    "Abbotsun",
-    "Abbott",
-    "Abbottson",
-    "Abby",
-    "Abbye",
-    "Abdel",
-    "Abdella",
-    "Abdu",
-    "Abdul",
-    "Abdulla",
-    "Abe",
-    "Abebi",
-    "Abel",
-    "Abelard",
-    "Abell",
-    "Abercromby",
-    "Abernathy",
-    "Abernon",
-    "Abert",
-    "Abeu",
-    "Abey",
-    "Abie",
-    "Abigael",
-    "Abigail",
-    "Abigale",
-    "Abijah",
-    "Abisha",
-    "Abisia",
-    "Abixah",
-    "Abner",
-    "Aborn",
-    "Abott",
-    "Abra",
-    "Abraham",
-    "Abrahams",
-    "Abrahamsen",
-    "Abrahan",
-    "Abram",
-    "Abramo",
-    "Abrams",
-    "Abramson",
-    "Abran",
-    "Abroms",
-    "Absa",
-    "Absalom",
-    "Abshier",
-    "Acacia",
-    "Acalia",
-    "Accalia",
-    "Ace",
-    "Acey",
-    "Acherman",
-    "Achilles",
-    "Achorn",
-    "Acie",
-    "Acima",
-    "Acker",
-    "Ackerley",
-    "Ackerman",
-    "Ackler",
-    "Ackley",
-    "Acquah",
-    "Acus",
-    "Ad",
-    "Ada",
-    "Adabel",
-    "Adabelle",
-    "Adachi",
-    "Adah",
-    "Adaha",
-    "Adai",
-    "Adaiha",
-    "Adair",
-    "Adal",
-    "Adala",
-    "Adalai",
-    "Adalard",
-    "Adalbert",
-    "Adalheid",
-    "Adali",
-    "Adalia",
-    "Adaliah",
-    "Adalie",
-    "Adaline",
-    "Adall",
-    "Adallard",
-    "Adam",
-    "Adama",
-    "Adamec",
-    "Adamek",
-    "Adamik",
-    "Adamina",
-    "Adaminah",
-    "Adamis",
-    "Adamo",
-    "Adamok",
-    "Adams",
-    "Adamsen",
-    "Adamski",
-    "Adamson",
-    "Adamsun",
-    "Adan",
-    "Adao",
-    "Adar",
-    "Adara",
-    "Adaurd",
-    "Aday",
-    "Adda",
-    "Addam",
-    "Addi",
-    "Addia",
-    "Addie",
-    "Addiego",
-    "Addiel",
-    "Addis",
-    "Addison",
-    "Addy",
-    "Ade",
-    "Adebayo",
-    "Adel",
-    "Adela",
-    "Adelaida",
-    "Adelaide",
-    "Adelaja",
-    "Adelbert",
-    "Adele",
-    "Adelheid",
-    "Adelia",
-    "Adelice",
-    "Adelina",
-    "Adelind",
-    "Adeline",
-    "Adella",
-    "Adelle",
-    "Adelpho",
-    "Adelric",
-    "Adena",
-    "Ader",
-    "Adest",
-    "Adey",
-    "Adham",
-    "Adhamh",
-    "Adhern",
-  ];
+  const [movie, setMovie] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const getMovies = async () => {
+    try {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false&query=${inputValue}`
+      );
+      setMovie({ ...res.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    if (search)
-      setResult(
-        nameList.filter((e) => e.toLowerCase().includes(search.toLowerCase()))
-      );
-  }, [search]);
+    getMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputValue]);
+
+  console.log("Movie", movie);
 
   return (
-    <div className="search">
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
-      />
-      {search ? (
-        <div className="resultContainer">
-          {result.map((e) => {
-            return <h1>{e}</h1>;
-          })}
-          {!result.length ? <h1>No item found</h1> : null}
+    <div className="Search">
+      <div className="Search_container">
+        <div className="Search_container_heading">
+          <h1>SEARCH</h1>
         </div>
-      ) : null}
+        <div className="Search_container_input">
+          <input
+            type="text"
+            onChange={(e) => {
+              setInputValue(e.target.value);
+              e.preventDefault();
+            }}
+          />
+        </div>
+        <div className="Search_container_results">
+          {inputValue || movie?.results?.length ? (
+            movie?.results?.length ? (
+              movie.results.map((e) => {
+                console.log(e);
+                return (
+                  <Link
+                    to={`/content/${e.id}`}
+                    style={{ textDecoration: "none" }}
+                    key={e.id}
+                  >
+                    <Card
+                      title={e.title}
+                      img={e.poster_path}
+                      date={e.release_date}
+                    />
+                  </Link>
+                );
+              })
+            ) : (
+              ""
+            )
+          ) : (
+            <h3>NO MOVIES MATCHED !!!</h3>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
