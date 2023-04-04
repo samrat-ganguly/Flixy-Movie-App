@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "./context";
 
+import Card from "../components/card/card";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseUser,
@@ -11,13 +13,10 @@ import {
   faCrown,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Card from "../components/card/card";
-
 import "../styles/home/main.css";
 
 const Home = () => {
   const movie = useGlobalContext();
-
   const [image, setImage] = useState(0);
 
   let i = 0;

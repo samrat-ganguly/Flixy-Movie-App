@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-import Loader from "./loader";
 import Error from "./error/error";
 
 const AppContext = React.createContext();
