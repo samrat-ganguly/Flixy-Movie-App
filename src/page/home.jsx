@@ -19,8 +19,6 @@ const Home = () => {
   const movie = useGlobalContext();
   const [image, setImage] = useState(0);
 
-  let i = 0;
-
   useEffect(() => {
     setTimeout(() => {
       setImage((image + 1) % 20);

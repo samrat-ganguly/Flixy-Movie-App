@@ -15,7 +15,7 @@
     color: var(--clr-grey-6);
     font-size: 1.5em;
     display: block;
-    padding-top: 3em;
+    margin-top: 3em;
     transition: color 0.5s;
     border: none;
     outline: none;
@@ -55,9 +55,12 @@
     .fa-fire-flame-curved,
     .fa-star,
     .fa-crown {
-      display: inline;
-      padding: 1rem;
       font-size: 1.2em;
+    }
+    .icons {
+      width: inherit;
+      display: flex;
+      justify-content: space-evenly;
     }
   }
 }
